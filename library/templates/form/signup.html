@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Book Library</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#f0f2f5] font-sans flex items-center justify-center min-h-screen m-0">
+
+
+
+    <div class="bg-white p-10 rounded-xl shadow-lg w-full max-w-md text-center">
+        <h2 class="text-2xl font-bold text-[#2c3e50] mb-2">Create Account</h2>
+        <p class="text-gray-500 text-sm mb-8">Join our community of readers today.</p>
+
+    {% include 'message/message.html' %}
+    
+        
+        <form method = 'POST' action="{% url 'sign_up' %}" class="space-y-4">
+            {% csrf_token %}
+
+    <div class="text-left">
+        <label class="block text-xs font-semibold mb-1 uppercase tracking-wide">Username</label>
+        <input type="text" name="username" placeholder="johndoe123" required 
+               class="w-full p-2.5 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+
+    <div class="text-left">
+        <label class="block text-xs font-semibold mb-1 uppercase tracking-wide">Email Address</label>
+        <input type="email" name="email" placeholder="john@example.com" required 
+               class="w-full p-2.5 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+
+    <div class="text-left">
+        <label class="block text-xs font-semibold mb-1 uppercase tracking-wide">Password</label>
+        <input type="password" name="password1" placeholder="Create a password" required 
+               class="w-full p-2.5 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+
+    <div class="text-left">
+        <label class="block text-xs font-semibold mb-1 uppercase tracking-wide">Confirm Password</label>
+        <input type="password" name="password2" placeholder="Repeat password" required 
+               class="w-full p-2.5 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+
+            <button type="submit" 
+                    class="w-full py-3 bg-[#27ae60] hover:bg-[#219150] text-white font-bold rounded-md text-lg transition duration-300 mt-2">
+                Create Account
+            </button>
+        </form>
+
+        <div class="mt-6 text-sm text-gray-500">
+            Already have an account? 
+            <a href="{% url 'userlogin' %}" class="text-blue-500 font-bold hover:underline">Login</a>
+        </div>
+    </div>
+
+</body>
+</html>
