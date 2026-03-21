@@ -28,51 +28,19 @@
         }
     </style>
 </head>
-<body class="font-sans antialiased text-slate-800 min-h-screen">
+<body class=" font-sans antialiased text-slate-800 min-h-screen">
 
     <!-- Django messages (keep original include) -->
     {% include 'message/message.html' %}
 
     <!-- ========== MODERN NAVIGATION ========== -->
-    <nav class="sticky top-0 z-20 bg-white/80 backdrop-blur-md border-b border-slate-200/60 shadow-sm">
-        <div class="max-w-7xl mx-auto px-5 md:px-8 py-4 flex flex-wrap items-center justify-between gap-3 nav-flex">
-            <!-- Logo / brand -->
-            <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-indigo-600 rounded-xl flex items-center justify-center shadow-md shadow-indigo-200">
-                    <span class="text-white text-lg font-black">📘</span>
-                </div>
-                <a href="{% url 'home' %}" class="text-2xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-800 to-sky-700 bg-clip-text text-transparent hover:from-indigo-600 transition">
-                    Bookly
-                </a>
-            </div>
-
-            <!-- Auth buttons + user info -->
-            <div class="flex items-center gap-3">
-                {% if user.is_authenticated %}
-                    <div class="flex items-center gap-3 bg-slate-100/80 rounded-full pl-4 pr-2 py-1.5 border border-slate-200">
-                        <span class="text-sm font-semibold text-slate-700">👋 {{ user.username }}</span>
-                        <a href="{% url 'userlogout' %}" class="inline-flex items-center gap-1 px-4 py-1.5 bg-rose-500 hover:bg-rose-600 text-white text-sm font-medium rounded-full transition shadow-sm">
-                            Logout
-                            <span>→</span>
-                        </a>
-                    </div>
-                {% else %}
-                    <a href="{% url 'userlogin' %}" class="px-5 py-2 text-sm font-semibold text-indigo-700 bg-indigo-50 hover:bg-indigo-100 rounded-full transition-all duration-200">
-                        Log in
-                    </a>
-                    <a href="{% url 'sign_up' %}" class="px-5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-full shadow-md shadow-indigo-200 transition-all">
-                        Sign up
-                    </a>
-                {% endif %}
-            </div>
-        </div>
-    </nav>
+    {% include 'nav/nav.html' %}
 
     <!-- MAIN CONTENT -->
     <div class="max-w-7xl mx-auto px-5 md:px-8 py-8 md:py-12">
 
         <!-- ========== SMART HEADER + FILTER SECTION ========== -->
-        <div class="bg-white/70 backdrop-blur-sm rounded-3xl shadow-sm border border-white/50 p-5 md:p-8 mb-10 transition-all">
+        <div class="bg-[linear-gradient(145deg,#f0f9ff_0%,#3482d0_100%)] backdrop-blur-sm rounded-3xl shadow-sm border border-white/50 p-5 md:p-8 mb-10 transition-all">
             <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
                 <!-- Title block -->
                 <div>
@@ -193,10 +161,10 @@
                             <!-- rating + details row (modern micro interaction) -->
                             <div class="mt-4 flex items-center justify-between border-t border-slate-100 pt-3">
                                 <div class="flex items-center gap-1">
-                                    <div class="flex text-amber-400 text-sm">
+                                    <!-- <div class="flex text-amber-400 text-sm">
                                         ★★★★★
                                     </div>
-                                    <span class="text-[11px] text-slate-400 ml-1 font-medium">(4.9)</span>
+                                    <span class="text-[11px] text-slate-400 ml-1 font-medium">(4.9)</span> -->
                                 </div>
                                 <span class="text-[11px] font-semibold text-indigo-500 group-hover:translate-x-1 transition-all inline-flex items-center gap-1">
                                     Details <span>→</span>

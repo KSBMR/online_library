@@ -1,18 +1,23 @@
 
-
-            {% for review in reviews %}
-                <div class="space-y-6">
-                    <div class="relative pl-8 border-l-2 border-slate-100 group">
-                        <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-4 border-indigo-500 transition-transform group-hover:scale-125"></div>
-                        <div class="mb-2 flex items-center gap-3">
-                            <span class="font-bold text-slate-900 text-sm uppercase tracking-tighter">{{ review.user.username }}</span>
-                            <span class="text-amber-400 text-[10px] font-bold">{{ review.rating }} / 5 ★</span>
-                        </div>
-                        <p class="text-slate-500 text-lg leading-relaxed font-light">{{ review.review }}</p>
-                    </div>
+        {% for review in reviews %}
+        <div class="relative pl-8 border-l-2 border-slate-100 group mb-10 last:mb-0">
+            <!-- The Dot: Positioned relative to the header line -->
+            <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-white border-4 border-indigo-500 transition-transform duration-300 group-hover:scale-125"></div>
+            
+            <div class="flex flex-col gap-1 mb-3">
+                <div class="flex items-center gap-3">
+                    <span class="font-bold text-slate-900 text-base uppercase tracking-tighter">{{ review.user.username }}</span>
+                    <span class="text-slate-300">|</span>
+                    <span class="text-amber-500 text-sm font-bold">{{ review.rating }} / 5 ★</span>
                 </div>
-                {% empty %}
-                <p class="text-slate-500 italic">No reviews yet for {{ books.title }}. Be the first!</p>
-                {% endfor %}
+            </div>
+
+            <p class="text-slate-800 text-xl leading-relaxed font-light">{{ review.review }}</p>
+        </div>
+        {% empty %}
+        <p class="text-slate-500 italic">No reviews yet for {{ books.title }}. Be the first!</p>
+        {% endfor %}
+
+                    
 
 
