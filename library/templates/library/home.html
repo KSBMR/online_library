@@ -12,7 +12,8 @@
             scroll-behavior: smooth;
         }
         body {
-            background: linear-gradient(145deg, #f0f9ff 0%, #e6f0fa 100%);
+            /* background: linear-gradient(145deg, #f0f9ff 0%, #e6f0fa 100%); */
+            background: #bbeaf2
         }
         .card-hover {
             transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
@@ -28,7 +29,7 @@
         }
     </style>
 </head>
-<body class=" font-sans antialiased text-slate-800 min-h-screen">
+<body class="font-sans antialiased text-slate-800 min-h-screen">
 
     <!-- Django messages (keep original include) -->
     {% include 'message/message.html' %}
@@ -40,7 +41,7 @@
     <div class="max-w-7xl mx-auto px-5 md:px-8 py-8 md:py-12">
 
         <!-- ========== SMART HEADER + FILTER SECTION ========== -->
-        <div class="bg-[linear-gradient(145deg,#f0f9ff_0%,#3482d0_100%)] backdrop-blur-sm rounded-3xl shadow-sm border border-white/50 p-5 md:p-8 mb-10 transition-all">
+        <div class="bg-white/70 backdrop-blur-sm rounded-3xl shadow-sm border border-white/50 p-5 md:p-8 mb-10 transition-all">
             <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
                 <!-- Title block -->
                 <div>
